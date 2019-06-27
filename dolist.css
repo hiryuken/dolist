@@ -1,0 +1,73 @@
+@font-face {
+    font-family: sitefont1;
+    src: url(BOOKOS.TTF);
+}
+h1 {
+    font-size: 5vw;
+    text-align: center;
+    margin: 0px 0px;
+    font-family: sitefont1;
+    color: white;
+    line-height: 100px;
+}
+
+h2,
+.titletextpage {
+    font-size: 5vw;
+    text-align: left;
+    margin: 0px 0px;
+    font-family: sitefont1;
+    color: #598699;
+    line-height:40px;
+    margin-left: 14vw;
+}
+
+body {
+    font-family: sitefont1;
+    background-color: #31445f;
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    background-size: cover;
+    margin: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    font-weight: bold;
+    color: black;
+    padding: 15px 20px;
+}
+table {
+    
+    margin-top: 40px;
+    text-align: center;
+    align-content: center;
+    border: 1px;
+    color: white;
+}
+
+td,th{
+    padding: 15px;
+    background-color: #00000045;
+}
+td{
+    text-align: left;
+}
+button{
+    padding: 15px;
+    border: none;
+    color: white;
+    background-color: #b74d4d;
+}
+
+.singoff{
+    position: fixed;
+    left:20px;
+    top:20px;
+}
