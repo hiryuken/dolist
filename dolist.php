@@ -81,7 +81,7 @@ mysqli_close($connectionDB);
 </head>
 <body>
 
-<h1>Do list</h1>
+<h1>Do list (git version)</h1>
 
 <table>
   <tr>
