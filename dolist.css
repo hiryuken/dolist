@@ -38,11 +38,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 input{
+  
     font-weight: bold;
     color: black;
-    padding: 15px 20px;
+    padding: 16px 20px;
 }
+
 table {
     
     margin-top: 40px;
@@ -75,4 +78,7 @@ button{
 .emptylist{
     color:white;
     padding: 2vw;
+}
+.alldelete{
+    width: 100%;
 }

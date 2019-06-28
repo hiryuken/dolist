@@ -93,12 +93,12 @@ mysqli_close($connectionDB);
         <form method="post" action="dolist.php">
         <tr>
           <td>Username</td>
-          <td><input type="text" name="username" size="20" autocomplete="off">
+          <td><input type="text" name="username" size="40" autocomplete="off">
           </td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><input type="text" name="password" size="40" autocomplete="off">
+          <td><input type="password" name="password" size="40" autocomplete="off">
           </td>
         </tr>
         <tr>

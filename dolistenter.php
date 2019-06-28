@@ -15,7 +15,7 @@
   
  while ($rows=mysqli_fetch_array($query)): 
   $del="delete".$rows['ID'];
-  $list.="<tr><td>$count</td><td>".$rows['title']."</td><td><button name='$del'>delete</button></td></tr>";
+  $list.="<tr><td>$count</td><td>".$rows['title']."</td><td><button class='deletebtm' name='$del'>X</button></td></tr>";
 
 
 if (isset($_POST[$del])){
@@ -27,15 +27,22 @@ if (isset($_POST[$del])){
   $count++;
   
  endwhile;
+ 
 
 
   if ($list!="") {
+    $list.="<tr> <td colspan='3'><button name='alldelete' class='alldelete'>Delete all</botton></td></tr>";
      $list="<form method='POST'>  <table><tr><th>n°</th><th>NOTA</th><th>Delete</th></tr>".$list."</table> </form>";
 
   }else{
    
     $list="<p class='emptylist'>Your list is empty, create a note</p>";
 
+  }
+ if (isset($_POST['alldelete'])) { 
+ 
+ $querydall=mysqli_query($connectionDB,"DELETE FROM list WHERE userid='".$_SESSION['ID']."' ") or die (mysqli_error($connectionDB)); 
+    header("refresh: 0");
   }
 
  if (isset($_POST['enter'])) { 
@@ -67,12 +74,12 @@ if (isset($_POST["signoff"])) {
 <h1>Do list</h1> 
 
   <form method="POST">
-    <button name="signoff" class="singoff">signoff</button>
+    <button name="signoff" class="singoff">sign out</button>
   </form>  
 
   <form method="POST">
     <input name="thingstodo" type="text" placeholder="enter the text here" size="40" maxlength="200" autocomplete="off" />
-    <button name="enter" id="enter">enter</button>
+    <button name="enter" id="enter">ENTER</button>
  </form>
   <?php echo $list;?>
 
