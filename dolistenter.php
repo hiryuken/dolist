@@ -38,11 +38,7 @@ if (isset($_POST[$del])){
 
   }
 
-
-
-
-  
-if (isset($_POST['enter'])) { 
+ if (isset($_POST['enter'])) { 
 
   $thingstodo=$_POST["thingstodo"];
   if($thingstodo!=""){
