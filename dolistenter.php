@@ -12,14 +12,29 @@
  $list="";
  $count=1;
 
+  
+ while ($rows=mysqli_fetch_array($query)): 
+  $del="delete".$rows['ID'];
+  $list.="<tr><td>$count</td><td>".$rows['title']."</td><td><button name='$del'>delete</button></td></tr>";
 
- while ($rows=mysqli_fetch_array($query)):
 
-  $list.="<tr><td>$count</td><td>".$rows['title']."</td><td><button name='delete".$rows['ID']."' >delete</button></td></tr>";
+if (isset($_POST[$del])){
+
+ echo "<script>
+   var m=confirm('are you sure you want to delete (".$rows['title'].")?');
+
+ </script>";
+  $querydelete=mysqli_query($connectionDB,"DELETE FROM list WHERE ID='".$rows['ID']."' ") or die(mysqli_error($connectionDB));
+
+    header("refresh:0");
+}
   $count++;
+  
  endwhile;
+
+
   if ($list!="") {
-     $list="<form method='_POST'>  <table><tr><th>n°</th><th>NOTA</th><th>Delete</th></tr>".$list."</table> </form>";
+     $list="<form method='POST'>  <table><tr><th>n°</th><th>NOTA</th><th>Delete</th></tr>".$list."</table> </form>";
 
   }else{
     $list="Your list is empty, create a note";
@@ -27,14 +42,8 @@
 
 
 
-/*if (isset($_POST['delete']));
-$query2=mysqli_query($connectionDB,"DELETE * FROM list WHERE userid='".$_SESSION["ID"]."' " ) or die(mysqli_error($connectionDB));
- 
-while ($rows=mysqli_fetch_array($query2)) {
-}
-*/
 
-
+  
 if (isset($_POST['enter'])) { 
 
   $thingstodo=$_POST["thingstodo"];
@@ -48,6 +57,7 @@ if (isset($_POST["signoff"])) {
    session_destroy();
    header("refresh: 0");
 }
+
 ?>
 
 
@@ -71,9 +81,6 @@ if (isset($_POST["signoff"])) {
     <button name="enter" id="enter">enter</button>
  </form>
   <?php echo $list;?>
-
-
-
 
 </body>
 </html>

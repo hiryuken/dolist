@@ -77,7 +77,7 @@ mysqli_close($connectionDB);
 <head>
 	<meta charset="utf-8">
 	<title>Do List</title>
-	<link href="dolist.css" rel="stylesheet" >
+	<link href="dolist.css" rel="stylesheet">
 </head>
 <body>
 
