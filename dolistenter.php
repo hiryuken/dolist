@@ -20,10 +20,6 @@
 
 if (isset($_POST[$del])){
 
- echo "<script>
-   var m=confirm('are you sure you want to delete (".$rows['title'].")?');
-
- </script>";
   $querydelete=mysqli_query($connectionDB,"DELETE FROM list WHERE ID='".$rows['ID']."' ") or die(mysqli_error($connectionDB));
 
     header("refresh:0");
@@ -37,7 +33,10 @@ if (isset($_POST[$del])){
      $list="<form method='POST'>  <table><tr><th>n°</th><th>NOTA</th><th>Delete</th></tr>".$list."</table> </form>";
 
   }else{
-    $list="Your list is empty, create a note";
+   
+    $list="<script> alert('Your list is empty, create a note');</script>";
+    ;
+
   }
 
 
