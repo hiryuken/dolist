@@ -34,8 +34,7 @@ if (isset($_POST[$del])){
 
   }else{
    
-    $list="<script> alert('Your list is empty, create a note');</script>";
-    ;
+    $list="<p class='emptylist'>Your list is empty, create a note</p>";
 
   }
 

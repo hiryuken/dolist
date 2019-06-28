@@ -71,3 +71,7 @@ button{
     left:20px;
     top:20px;
 }
+.emptylist{
+    color: white;
+    padding: 2vw;
+}
