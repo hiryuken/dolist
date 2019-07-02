@@ -3,7 +3,7 @@
 
  if (!isset($_SESSION['user']) || !isset($_SESSION['password'])) {
    header("location: dolist.php");
- }//se non sono settati rimanda alla homepage
+ }
 
  $connectionDB=mysqli_connect("localhost","root","","dolistuser");
 
@@ -31,7 +31,7 @@ if (isset($_POST[$del])){
 
 
   if ($list!="") {
-    $list.="<tr> <td colspan='3'><button name='alldelete' class='alldelete'>Delete all</botton></td></tr>";
+    $list.="<tr> <td colspan='3'><button name='alldelete' class='alldeletebtn'>Delete all</botton></td></tr>";
      $list="<form method='POST'>  <table><tr><th>n°</th><th>NOTA</th><th>Delete</th></tr>".$list."</table> </form>";
 
   }else{
@@ -78,8 +78,8 @@ if (isset($_POST["signoff"])) {
   </form>  
 
   <form method="POST">
-    <input name="thingstodo" type="text" placeholder="enter the text here" size="40" maxlength="200" autocomplete="off" />
-    <button name="enter" id="enter">ENTER</button>
+    <input name="thingstodo" type="text" placeholder="enter the text here"  maxlength="200" autocomplete="off" />
+    <button name="enter" id="enter" class="enterbtn">ENTER</button>
  </form>
   <?php echo $list;?>
 
